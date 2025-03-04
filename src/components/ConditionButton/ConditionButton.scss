@@ -1,0 +1,20 @@
+.condition-btn {
+    padding: 0.125rem 1rem;
+
+    color:#52525B;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 200%;
+
+    border-radius: 1rem;
+    border: 1px solid #52525B;
+    background: #18181B;
+
+    &.active {
+        color:#FB7185; 
+        border-color: #FB7185;
+        background: rgba(251, 113, 133, 0.10);
+    }
+}

@@ -1,0 +1,74 @@
+.generator {
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid #27272A;
+    background: #18181B;
+    margin-top: 3rem;
+}
+
+.output {
+    margin-bottom: 2.5rem;
+
+    form {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        input {
+            border-radius: 0.25rem;
+            padding: 0.6rem;
+            background: #27272A;
+            width: 75%;
+
+            color: #A1A1AA;
+            font-family: "IBM Plex Mono";
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
+
+.output-title {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0.75rem;
+}
+
+.generate-btn {
+    border-radius: 0.25rem;
+    color: #fafafa;
+    padding: 0.75rem 1.25rem;
+    background: #F43F5E;
+}
+
+.password-conditions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        background: #27272A;
+        color: #A1A1AA;
+        width: 30%;
+        font-family: "IBM Plex Mono";
+    }
+}
+
+.conditions-title {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0.75rem;
+}
+
+.condition-buttons {
+    display: flex;
+    gap: 0.5rem;
+}

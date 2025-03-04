@@ -1,0 +1,22 @@
+.header-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-title {
+    color: #fff;
+    font-size: 2.25rem;
+}
+
+.header-slogan {
+    color: #71717A;
+    font-size: 1rem;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

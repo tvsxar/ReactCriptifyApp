@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+body {
+  background-color: #18181B;
+  font-family: 'Inter', sans-serif;
+  color: #A1A1AA;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.btn {
+  padding: 0.625rem;
+  border-radius: 0.25rem;
+  background: #27272A;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  img {
+      width: 1.25rem;
+      height: 1.25rem;
+  }
+}
+
+.password-generator {
+  width: 40rem;
+  margin: 0 auto;
+}
