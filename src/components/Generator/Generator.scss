@@ -72,3 +72,22 @@
     display: flex;
     gap: 0.5rem;
 }
+
+.copy-container {
+    position: relative;
+    display: inline-block;
+}
+
+.copy-message {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #27272A;
+    color: #A1A1AA;
+    padding: 0.33rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    font-family: "IBM Plex Mono";
+}
