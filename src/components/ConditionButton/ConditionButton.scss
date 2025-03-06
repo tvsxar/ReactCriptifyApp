@@ -1,3 +1,5 @@
+@use '../../global.scss' as g;
+
 .condition-btn {
     padding: 0.125rem 1rem;
 
@@ -13,8 +15,8 @@
     background: #18181B;
 
     &.active {
-        color:#FB7185; 
-        border-color: #FB7185;
-        background: rgba(251, 113, 133, 0.10);
+        color: g.$active-btn; 
+        border-color: g.$active-btn;
+        background: g.$bg-active-btn;
     }
 }

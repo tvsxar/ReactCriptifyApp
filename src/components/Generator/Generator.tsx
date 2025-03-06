@@ -4,11 +4,13 @@ import ConditionButton from '../ConditionButton/ConditionButton';
 
 // images
 import copyImg from '../../assets/copy.svg';
+import refreshImg from '../../assets/refresh.svg';
 
 // type
 type buttonType = 'uppercase' | 'lowercase' | 'special' | 'numbers';
 
 function Generator() {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [length, setLength] = useState<number>();
     const [password, setPassword] = useState<string>('');
     const [copyMessage, setCopyMessage] = useState<string>('Copied');
@@ -24,21 +26,20 @@ function Generator() {
     async function generatePassword(e : React.FormEvent) {
         e.preventDefault();
 
+        setIsLoading(true);
         const url : string = `https://api.genratr.com/?length=${length}${includeUppercase ? '&uppercase' : ''}${includeLowercase ? '&lowercase' : ''}${includeSpecial ? '&special' : ''}${includeNumbers ? '&numbers' : ''}`;
 
         try {
             const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error('Failed to generate password');
-            }
+            if (!response.ok) throw new Error('Failed to generate password');
 
             const data = await response.json();
             setPassword(data.password);
-            setLength(12);
         } catch(error) {
             console.error('Error generating password:', error);
         }
+
+        setIsLoading(false);
     }
 
     function handleConditionButtonClick(type : buttonType) {
@@ -74,25 +75,15 @@ function Generator() {
 
     function handleCopyButtonClick(e : React.FormEvent) {
         e.preventDefault();
-
-        if (isCopying.current) {
-            return; // if true - return
-        }
+        if (!password || isCopying.current) return;
 
         isCopying.current = true;
+        navigator.clipboard.writeText(password);
+        setCopyMessage(password ? 'Copied' : 'Nothing to copy');
+        setShowCopyMessage(true);
 
-        // copy the password to the clipboard if password is true
-        if(password) {
-            navigator.clipboard.writeText(password);
-            setCopyMessage('Copied')
-        } else {
-            setCopyMessage('Nothing to copy')
-        }
-       
-        // show the message
-        setShowCopyMessage(prev => !prev);
         setTimeout(() => {
-            setShowCopyMessage(prev => !prev) // hide message after 2 seconds
+            setShowCopyMessage(false);
             isCopying.current = false;
         }, 2000);
     }
@@ -112,7 +103,12 @@ function Generator() {
                         <button onClick={handleCopyButtonClick} className="copy-btn btn"><img src={copyImg} alt="copyImg" /></button>
                         {showCopyMessage && <div className='copy-message'>{copyMessage}</div>}
                     </div>
-                    <button onClick={generatePassword} className="generate-btn">Generate</button>
+                    <button onClick={generatePassword} className="generate-btn">{
+                    isLoading ? (
+                        <div className="refresh"><img src={refreshImg} className='refresh-icon' /></div>
+                    ) : (
+                        <span>Generate</span>
+                    )}</button>
                 </form>
             </div>
 

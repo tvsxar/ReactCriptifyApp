@@ -28,14 +28,14 @@
             line-height: normal;
         }
     }
-}
 
-.output-title {
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 0.75rem;
+    .output-title {
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 0.75rem;
+    }
 }
 
 .generate-btn {
@@ -43,6 +43,8 @@
     color: #fafafa;
     padding: 0.75rem 1.25rem;
     background: #F43F5E;
+    width: 20%;
+    height: 2.45rem;
 }
 
 .password-conditions {
@@ -90,4 +92,24 @@
     font-size: 0.8rem;
     white-space: nowrap;
     font-family: "IBM Plex Mono";
+}
+
+.refresh {
+    display: flex;
+    justify-content: center;
+
+    .refresh-icon {
+        width: 1rem;
+        height: 1rem;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
